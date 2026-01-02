@@ -1,6 +1,8 @@
 import React from 'react'
-import Button from './Button'
+import { useNavigate } from 'react-router-dom'
+import Button from '../components/Button'
 const Home = () => {
+  const navigate=useNavigate();
   return (
     <div className='text-white flex flex-col justify-center items-center gap-20 m-10'>
       <div className='flex justify-center items-center text-white font-bold font-sans text-4xl gap-4'> <h1>Welcome to the E-commerce-website </h1><div className='flex justify-center items-center'>
@@ -9,8 +11,8 @@ const Home = () => {
       </div>
       </div>
       <div className='flex justify-center items-center gap-10'>
-        <Button text={"Login"} />
-        <Button text={"Help Me"} />
+        <Button text={"Login"} type={"button"} />
+        <Button text={"Help Me"} type={"button"} onClick={()=>navigate("/contact")}  />
       </div>
       <div>
         <h1 className='text-2xl font-sans font-bold flex flex-col items-center justify-center gap-4 '>
